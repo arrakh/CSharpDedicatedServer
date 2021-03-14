@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\ASUS ROG\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ASUS ROG\\.nuget\\packages"
+    ]
+  }
+}
