@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
@@ -13,6 +12,9 @@ namespace GameServer
         public static Dictionary<int, Client> clients = new Dictionary<int, Client>();
 
         public static int Port { get; private set; }
+
+        public delegate void PacketHandler(int fromClient, Packet packet);
+        public static Dictionary<int, PacketHandler> packetHandlers;
 
         private static TcpListener tcpListener;
 
@@ -56,6 +58,12 @@ namespace GameServer
             {
                 clients.Add(i, new Client(i));
             }
+
+            packetHandlers = new Dictionary<int, PacketHandler>()
+            {
+                {(int)ClientPackets.welcomeReceived, ServerHandle.WelcomeReceived }
+            };
+            Console.WriteLine("Initialized packets.");
         }
 
     }

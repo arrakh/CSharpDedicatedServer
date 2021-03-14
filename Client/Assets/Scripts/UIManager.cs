@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class UIManager : Singleton<UIManager>
 {
 
     public GameObject startmenu;
-    public InputField usernameField;
+    public TMP_InputField usernameField;
 
     public void ConnectToServer()
     {
